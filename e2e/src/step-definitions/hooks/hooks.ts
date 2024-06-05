@@ -22,6 +22,12 @@ Before(async (scenario) => {
     global.page = await global.context.newPage();
 });
 
-After(async () => {
+After(async (scenario) => {
+    const scenarioStatus = scenario.result?.status;
+    if(scenarioStatus === 'FAILED'){
+        await global.page.screenshot({
+            path: `./reports/screenshots/${scenario.pickle.name}.png`
+        })
+    }
     await global.page.close();
 });
