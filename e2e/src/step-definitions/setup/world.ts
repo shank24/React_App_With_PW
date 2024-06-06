@@ -49,8 +49,8 @@ export class ScenarioWorld extends World {
             args : ['--disable-web-security', '--disable-features=IsolateOrigins', 'site-per-process']
         })
         return browser;
-
     }
 
 }
 
+setWorldConstructor(ScenarioWorld)

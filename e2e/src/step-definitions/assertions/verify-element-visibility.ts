@@ -1,9 +1,11 @@
 import { Then } from "@cucumber/cucumber";
 import { expect } from '@playwright/test';
+import { ScenarioWorld } from "../setup/world";
+
 
 Then(
     /^the "([^"]*)" should contain the text "(.*)"$/,
-    async function (elementKey: string, expectedElement: string) {
+    async function (this: ScenarioWorld, elementKey: string, expectedElement: string) {
         const {
             screen: { page },
         } = this;
@@ -16,7 +18,7 @@ Then(
 
 Then(
     /^the "([^"]*)" should be displayed$/,
-    async function name(elementKey: string) {
+    async function name(this: ScenarioWorld, elementKey: string) {
         const {
             screen: { page },
         } = this;

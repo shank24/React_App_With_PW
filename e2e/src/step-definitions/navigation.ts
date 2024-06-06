@@ -1,5 +1,5 @@
 import { Given } from "@cucumber/cucumber";
-
+import { ScenarioWorld } from "./setup/world";
 
 //Old Way
 /*Given('I am on the {string} page', async function (pageId: string) {
@@ -10,7 +10,7 @@ import { Given } from "@cucumber/cucumber";
 //Via Regex
 Given(
     /^I am on the "([^"]*)" page$/,
-    async function (pageId: string) {
+    async function (this: ScenarioWorld, pageId: string) {
         const {
             screen: { page },
         } = this;

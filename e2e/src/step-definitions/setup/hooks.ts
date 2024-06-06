@@ -3,9 +3,9 @@ import { ScenarioWorld } from "./world";
 
 Before(async function (this: ScenarioWorld, scenario) {
     console.log(`Running Cucumber Scenario ${scenario.pickle.name}`)
+    
     const contextOptions = {
         recordVideo: {
-            //dir: './reports/videos/'+scenario.pickle.name,
             dir: `./reports/videos/'${scenario.pickle.name}`
         }
     }
@@ -24,7 +24,7 @@ After(async function (this: ScenarioWorld, scenario) {
     if (scenarioStatus === 'FAILED') {
         await page.screenshot({
             path: `./reports/screenshots/${scenario.pickle.name}.png`
-        })
+        });
     }
     await browser.close();
     return browser;
