@@ -3,7 +3,7 @@ import { ScenarioWorld } from "./world";
 
 Before(async function (this: ScenarioWorld, scenario) {
     console.log(`Running Cucumber Scenario ${scenario.pickle.name}`)
-    
+
     const contextOptions = {
         recordVideo: {
             dir: `./reports/videos/'${scenario.pickle.name}`
@@ -14,6 +14,7 @@ Before(async function (this: ScenarioWorld, scenario) {
     return ready;
 
 });
+
 
 After(async function (this: ScenarioWorld, scenario) {
     const {
@@ -28,5 +29,5 @@ After(async function (this: ScenarioWorld, scenario) {
     }
     await browser.close();
     return browser;
-    
+
 });
