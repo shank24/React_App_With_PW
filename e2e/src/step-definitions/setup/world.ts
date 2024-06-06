@@ -27,7 +27,7 @@ export class ScenarioWorld extends World {
     async init(contextOptions?: BrowserContextOptions): Promise<Screen> {
         await this.screen?.page?.close();
         await this.screen?.context?.close();
-        this.screen?.browser?.close();
+        await this.screen?.browser?.close();
 
         const browser = await this.newBrowser();
         const context = await browser.newContext(contextOptions);

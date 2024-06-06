@@ -1,7 +1,7 @@
-import { BeforeAll, Before, AfterAll, After } from "@cucumber/cucumber";
+//import { BeforeAll, Before, AfterAll, After } from "@cucumber/cucumber";
 //import { chromium } from "playwright";
 
-const {chromium} = require("playwright");
+/*const {chromium} = require("playwright");
 
 BeforeAll(async () => {
     global.browser = await chromium.launch({
@@ -31,4 +31,4 @@ After(async (scenario) => {
         })
     }
     await global.page.close();
-});
+});*/
