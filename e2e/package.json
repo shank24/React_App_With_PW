@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "rimraf": "./node_modules/rimraf/bin.js",
     "transpile": "rimraf dist && babel --extensions .ts --out-dir dist src",
-    "cucumber": "yarn transpile && cucumber-js"
+    "cucumber-compile":"yarn transpile && cucumber-js",
+    "cucumber": "COMMON_CONFIG_FILE=env/common.env yarn cucumber-compile" 
   },
   "author": "",
   "license": "ISC",
@@ -15,6 +15,7 @@
     "@babel/preset-env": "^7.24.7",
     "@cucumber/cucumber": "^10.7.0",
     "@playwright/test": "^1.44.0",
+    "dotenv": "^16.4.5",
     "playwright": "^1.44.0",
     "typescript": "^5.4.5"
   },
